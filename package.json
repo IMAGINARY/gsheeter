@@ -1,0 +1,33 @@
+{
+  "name": "@imaginary-maths/gsheeter",
+  "version": "1.0.0",
+  "description": "JS library for reading Google Sheets as JSON data",
+  "main": "index.js",
+  "repository": "https://github.com/IMAGINARY/gsheeter.git",
+  "author": "Eric Londaits <eric.londaits@imaginary.org>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IMAGINARY/gsheeter/issues"
+  },
+  "private": false,
+  "engines": {
+    "node": "^10.14.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^7.0.0"
+  },
+  "scripts": {
+    "test": "mocha test"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "google-spreadsheet": "^2.0.8"
+  },
+  "mocha": {
+    "timeout": 10000
+  }
+}
