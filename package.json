@@ -1,6 +1,6 @@
 {
   "name": "@imaginary-maths/gsheeter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JS library for reading Google Sheets as JSON data",
   "main": "index.js",
   "repository": "https://github.com/IMAGINARY/gsheeter.git",
@@ -11,7 +11,7 @@
   },
   "private": false,
   "engines": {
-    "node": "^10.14.0"
+    "node": ">=10.14.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",

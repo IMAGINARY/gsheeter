@@ -18,13 +18,32 @@ GSheeter.get(
 
 ```
 
+or for authenticated access:
+
+```
+const GSheeter = require('@imaginary-maths/gsheeter');
+const credentials = require('./client_secret.json');
+
+GSheeter.get(
+    spreadsheetID,
+    worksheetID,
+    {
+        credentials,
+    }
+).then((data) => {
+  // ...
+});
+```
+
+where `client_secret.json` has the service account credentials (see section "Protected Sheets" below).
+
 **Arguments:**
 
-- **spreadsheetID**: The first long alphanumeric string in the sheet's URL. 
+- **spreadsheetID**: The first long alphanumeric string in the sheet's URL.
 - **worksheetID**: The worksheet number, starting from 1.
 
 **Returns:** An array of objects (one per row) with properties based on the columns (named after the text on the
-first row). 
+first row).
 
 NOTE: The Google Spreadsheets API might add an `id` property to returned rows, which will be
 overriden if any of the columns is named `id`.
@@ -38,13 +57,13 @@ If the sheet has a completely empty row any rows underneath it will not be read.
 
 Feel free to use formatting, it won't affect read values.
 
-You can use formulas in the sheet, but you'll only access the calculated values.  
+You can use formulas in the sheet, but you'll only access the calculated values.
 
 ## Accessing Google Spreadsheets
 
 ### Public access (no credentials)
 
-To open a Google Spreadsheet without authenticating it must be explicitly published 
+To open a Google Spreadsheet without authenticating it must be explicitly published
 using the `File > Publish to the web` menu option (in Google Sheets). It's not enough
 to make the sheet publicly accessible through the regular sharing settings.
 
@@ -74,7 +93,7 @@ is as follows:
 After this use the account's email address to explicitly give it read access to the sheet through its Share button,
 as if this was the email address of a regular user you're sharing it with.
 
-See the 
+See the
 [README file of the google-spreadsheet module repo](https://github.com/theoephraim/node-google-spreadsheet) for
 instructions for environments where a local file cannot be saved (like HEROKU).
 
@@ -82,7 +101,7 @@ instructions for environments where a local file cannot be saved (like HEROKU).
 
 ## More information
 
-For more information on accessing Google Spreadsheets see the 
+For more information on accessing Google Spreadsheets see the
 [README file of the google-spreadsheet module repo](https://github.com/theoephraim/node-google-spreadsheet).
 
 ## License
